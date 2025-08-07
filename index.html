@@ -31,5 +31,54 @@
     <footer>
         <p>&copy; 2025 Lorenzo Saporiti</p>
     </footer>
+    <section class="terminal-section">
+        <div id="terminal">
+            <div id="terminal-output"></div>
+            <form id="terminal-form" autocomplete="off">
+                <span class="prompt">user@linux:-$</span>
+                <input type="text" id="terminal-input" autofocus />
+            </form>
+        </div>
+    </section>
+    <script>
+    const terminalOutput = document.getElementById('terminal-output');
+    const terminalForm = document.getElementById('terminal-form');
+    const terminalInput = document.getElementById('terminal-input');
+
+    function printToTerminal(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        terminalOutput.appendChild(div);
+        terminalOutput.scrollTop = terminalOutput.scrollHeight;
+    }
+
+    function printDownloadButton() {
+        const div = document.createElement('div');
+        const btn = document.createElement('a');
+        btn.textContent = 'Scarica il mio CV';
+        btn.href = 'cv.pdf'; // Sostituisci con il percorso reale del tuo CV
+        btn.download = 'LorenzoSaporiti_CV.pdf';
+        btn.className = 'download-btn';
+        div.appendChild(btn);
+        terminalOutput.appendChild(div);
+        terminalOutput.scrollTop = terminalOutput.scrollHeight;
+    }
+
+    terminalForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const cmd = terminalInput.value.trim();
+        printToTerminal('user@linux:-$ ' + cmd);
+        if (cmd === 'ls') {
+            printToTerminal('cv.openME');
+        } else if (cmd === 'cat cv.openME') {
+            printDownloadButton();
+        } else if (cmd === 'clear') {
+            terminalOutput.innerHTML = '';
+        } else if (cmd) {
+            printToTerminal('Comando non riconosciuto');
+        }
+        terminalInput.value = '';
+    });
+    </script>
 </body>
 </html>
