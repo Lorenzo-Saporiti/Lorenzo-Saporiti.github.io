@@ -122,3 +122,10 @@ footer {
 .download-btn:hover {
     background: #5ee6c4;
 }
+.terminal-title {
+    text-align: center;
+    margin-bottom: 0.7rem;
+    color: #7fffd4;
+    font-size: 1.05rem;
+    font-family: 'Fira Mono', 'Consolas', monospace;
+}
