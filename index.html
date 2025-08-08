@@ -10,7 +10,7 @@
     <nav>
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="competenze.html">Competenze</a></li>
+            <li><a href="Skills.html">Skills</a></li>
             <li><a href="progetti.html">Progetti</a></li>
             <li><a href="contatti.html">Contatti</a></li>
         </ul>
@@ -20,18 +20,15 @@
         <p>Cyber Security Specialist</p>
     </header>
     <main>
-        <section class="intro">
-            <h2>Benvenuto nel mio mondo digitale</h2>
+        <section class="intro" style="text-align: center;">
+            <h2>Because prevention is better than breach.</h2>
             <p>
-                Proteggo sistemi, analizzo vulnerabilità e sviluppo soluzioni sicure.<br>
-                Esplora le mie competenze, i progetti e contattami per collaborazioni!
+                In today’s hyper-connected world, security is not optional.<br>
+                I’m a cybersecurity specialist focused on helping companies stay ahead of threats, secure their infrastructure, and build resilience.
             </p>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2025 Lorenzo Saporiti</p>
-    </footer>
-    <div class="terminal-title">Use Linux to find the CV</div>
+    <div class="terminal-title" style="margin-top: 150px;">Use Linux to find the CV</div>
     <section class="terminal-section">
         <div id="terminal">
             <div id="terminal-output"></div>
@@ -41,6 +38,9 @@
             </form>
         </div>
     </section>
+        <footer>
+        <p>&copy; 2025 Lorenzo Saporiti</p>
+    </footer>
     <script>
     const terminalOutput = document.getElementById('terminal-output');
     const terminalForm = document.getElementById('terminal-form');
@@ -57,7 +57,7 @@
     function printDownloadButton() {
         const div = document.createElement('div');
         const btn = document.createElement('a');
-        btn.textContent = 'Scarica il mio CV';
+        btn.textContent = 'download my CV';
         btn.href = 'cv.pdf'; // Sostituisci con il percorso reale del tuo CV
         btn.download = 'LorenzoSaporiti_CV.pdf';
         btn.className = 'download-btn';
